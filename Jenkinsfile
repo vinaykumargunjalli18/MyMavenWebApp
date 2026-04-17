@@ -20,13 +20,13 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploy step (copy WAR to server or Tomcat)'
+                echo 'Deploy step (you can copy JAR or run it)'
             }
         }
     }
