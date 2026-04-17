@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/vinaykumargunjalli18/MymavenWebApp.git'
+                git 'https://github.com/vinaykumargunjalli18/MyMavenWebApp'
             }
         }
 
@@ -20,13 +20,13 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                archiveArtifacts artifacts: 'target/*.war', fingerprint: true
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploy step (you can copy JAR or run it)'
+                sh 'mvn clean package'
             }
         }
     }
