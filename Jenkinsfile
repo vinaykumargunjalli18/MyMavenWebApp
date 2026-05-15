@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/vinaykumargunjalli18/MyMavenWebApp'
+            	git branch: 'main', url: 'https://github.com/vinaygunjalli18/MyMAvenWebApp'
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'mvn clean package'
+                sh 'echo "deployment starts here"'
             }
         }
     }
